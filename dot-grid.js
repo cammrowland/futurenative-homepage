@@ -11,7 +11,7 @@ const GRID = {
   amplitude: 0.26,   // 0 = flat, 1 = full swing
   period: 9.0,       // seconds per wave cycle
   baseAlpha: 0.030,  // dimmest dot
-  alphaRange: 0.055, // dimmest -> brightest
+  alphaRange: 0.080, // dimmest -> brightest
   buckets: 14        // brightness steps; also how many fills we issue per frame
 };
 
