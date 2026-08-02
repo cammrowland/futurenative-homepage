@@ -1,7 +1,7 @@
 :root {
-  --bg: #E4E4E4;
-  --ink: #0A0A0A;
-  --muted: #888;
+  --bg: #121212;
+  --ink: #EDEDED;
+  --muted: #9A9A9A;
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
   --sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 }
@@ -25,7 +25,21 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+#grid {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 900ms ease;
+}
+
 main {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
   min-height: 100dvh;
   width: 100%;
@@ -51,7 +65,7 @@ main {
   width: min(420px, 60vw);
   height: auto;
   display: block;
-  mix-blend-mode: multiply;
+  fill: var(--ink);
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 900ms ease, transform 900ms ease;
@@ -89,12 +103,12 @@ main {
 
 .contact a:hover,
 .contact a:focus-visible {
-  color: #333;
+  color: #C4C4C4;
 }
 
 .contact a.contact-secondary:hover,
 .contact a.contact-secondary:focus-visible {
-  color: #555;
+  color: #CDCDCD;
 }
 
 .contact a:focus-visible {
@@ -116,6 +130,7 @@ footer {
   transition: opacity 900ms ease 400ms, transform 900ms ease 400ms;
 }
 
+.is-loaded #grid,
 .is-loaded .logo,
 .is-loaded .contact a,
 .is-loaded footer {
@@ -133,6 +148,7 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  #grid,
   .logo,
   .contact a,
   footer {
